@@ -2,6 +2,8 @@ import { NavigationContainer } from '@react-navigation/native'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { HomeScreen } from '../../screens/HomeScreen'
 import { FavoritesScreen } from '../../screens/FavoritesScreen'
+import { AntDesign } from '@expo/vector-icons'
+import { TouchableOpacity } from 'react-native'
 
 const Drawer = createDrawerNavigator()
 
@@ -9,8 +11,17 @@ export const MainNavigator = () => {
     return (
         <NavigationContainer>
             <Drawer.Navigator initialRouteName='Home'>
-                <Drawer.Screen name='Home' component={HomeScreen} />
-                <Drawer.Screen name='Favrites' component={FavoritesScreen} />
+                <Drawer.Screen options={{
+                    headerRight:() => (
+                        <TouchableOpacity style={{marginRight:24}}>
+                            <AntDesign name='shoppingcart' size={24} />
+                        </TouchableOpacity>
+                    ),
+                    drawerIcon: () => <AntDesign name='home' size={20} />
+                }} name='Inicio' component={HomeScreen} />
+                <Drawer.Screen options={{
+                    drawerIcon: () => <AntDesign name='hearto' size={20} />
+                }} name='Favoritos' component={FavoritesScreen} />
             </Drawer.Navigator>
         </NavigationContainer>
     )
