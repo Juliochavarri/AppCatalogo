@@ -14,7 +14,7 @@ export const MainNavigator = () => {
             <Drawer.Navigator initialRouteName='Home'>
                 <Drawer.Screen options={{
                     headerRight:() => (
-                        <TouchableOpacity style={{marginRight:24}} onPress={()=>}>
+                        <TouchableOpacity style={{marginRight:24}}>
                             <AntDesign name='hearto' color='red' size={24} />
                         </TouchableOpacity>
                     ),
