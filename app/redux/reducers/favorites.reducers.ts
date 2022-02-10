@@ -9,7 +9,7 @@ export const favoritesReducer = (state = initialState, action) => {
         case ADD_FAVORITE:
             return {
                 ...state,
-                favorites: action.product
+                favorites: [...state.favorites,action.product]
             }
         case DELETE_FAVORITE:
             return {
